@@ -38,7 +38,7 @@ jobs:
           host: ${{ secrets.AWS_SERVER_IP }}
           username: ubuntu
           key: ${{ secrets.AWS_EC2_SSH_KEY }}
-          # env 항목을 추가하여 GitHub Secrets의 값을 전달합니다.
+          # env 항목을 추가하여 GitHub Secrets의 값을 전달
           envs: MYSQL_PASSWORD
           script: |
             cd /home/ubuntu/andlife
