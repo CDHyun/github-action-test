@@ -4,18 +4,15 @@ spring:
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/andlife?serverTimezone=UTC
+    url: jdbc:mysql://db:3306/andlife?serverTimezone=UTC
     username: root
     password: ${MYSQL_PASSWORD}
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     defer-datasource-initialization: true
     show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
 
   sql:
     init:
