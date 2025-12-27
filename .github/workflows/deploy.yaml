@@ -30,7 +30,7 @@ jobs:
           key: ${{ secrets.AWS_EC2_SSH_KEY }}
           source: "build/libs/*.jar,Dockerfile,docker-compose.yml"
           target: "/home/ubuntu/andlife"
-          strip_components: 2
+          strip_components: 0
 
       - name: EC2에서 Docker Compose 실행
         uses: appleboy/ssh-action@master
@@ -40,5 +40,6 @@ jobs:
           key: ${{ secrets.AWS_EC2_SSH_KEY }}
           script: |
             cd /home/ubuntu/andlife
+            ls -R
             docker compose down
             docker compose up --build -d
