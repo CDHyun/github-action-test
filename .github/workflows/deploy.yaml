@@ -38,10 +38,11 @@ jobs:
           host: ${{ secrets.AWS_SERVER_IP }}
           username: ubuntu
           key: ${{ secrets.AWS_EC2_SSH_KEY }}
-          # env 항목을 추가하여 GitHub Secrets의 값을 전달
-          envs: MYSQL_PASSWORD
           script: |
             cd /home/ubuntu/andlife
+            # 변수 선언
+            export MYSQL_PASSWORD="${{ secrets.MYSQL_PASSWORD }}"
+            
+            # 실행
             docker compose down
-            # 실행 시점에 환경 변수 주입
-            MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }} docker compose up --build -d
+            docker compose up --build -d
