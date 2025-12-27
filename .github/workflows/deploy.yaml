@@ -40,9 +40,5 @@ jobs:
           key: ${{ secrets.AWS_EC2_SSH_KEY }}
           script: |
             cd /home/ubuntu/andlife
-            # 전송된 jar 파일 이름을 Dockerfile에서 인식하기 쉽게 변경
-            mv build/libs/*.jar app.jar || true
-            
-            # 기존 컨테이너 중지 및 삭제, 새 이미지 빌드 후 실행
             docker compose down
             docker compose up --build -d
