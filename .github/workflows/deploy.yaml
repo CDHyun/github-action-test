@@ -28,7 +28,7 @@ jobs:
           host: ${{ secrets.AWS_SERVER_IP }}
           username: ubuntu
           key: ${{ secrets.AWS_EC2_SSH_KEY }}
-          source: "build/libs/*.jar,Dockerfile,docker-compose.yml"
+          source: "build/libs/*.jar,Dockerfile,docker-compose.yaml"
           target: "/home/ubuntu/andlife"
           strip_components: 0
 
