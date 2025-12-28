@@ -1,11 +1,11 @@
 .gradle
 build/
-!gradle/wrapper/gradle-wrapper.jar
+!backend/gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 
 ### IntelliJ IDEA ###
-.idea/*
+backend/.idea/*
 *.iws
 *.iml
 *.ipr
@@ -14,7 +14,7 @@ out/
 !**/src/test/**/out/
 
 ### Kotlin ###
-.kotlin
+backend/.kotlin
 
 ### Eclipse ###
 .apt_generated
