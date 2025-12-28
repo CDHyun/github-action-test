@@ -31,7 +31,7 @@ jobs:
           host: ${{ secrets.AWS_SERVER_IP }}
           username: ubuntu
           key: ${{ secrets.AWS_EC2_SSH_KEY }}
-          source: "backend/build/libs/*.jar,backend/Dockerfile,docker-compose.yaml"
+          source: "backend/build/libs/*.jar,backend/Dockerfile,backend/docker-compose.yaml"
           target: "/home/ubuntu/andlife"
           strip_components: 1 # backend/ 라는 상위 폴더명을 제외하고 전송
 
